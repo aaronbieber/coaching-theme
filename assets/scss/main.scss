@@ -154,8 +154,11 @@ main, nav, section, summary {
   }
 }
 
-.banner-thumbnail-wrapper {
+.banner-wrapper-pad {
   padding: 180px 0 155px;
+}
+
+.banner-thumbnail-wrapper {
   min-height: 0;
   position: relative;
   overflow: hidden;
@@ -984,9 +987,4 @@ background-color: #FF6600
 
 .skip_subscribe {
   text-align: center;
-}
-
-.homepage .banner-thumbnail-wrapper {
-  background-color: #1f1f1f;
-  padding: 0;
 }

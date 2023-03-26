@@ -1,3 +1,5 @@
+{{ $nav := .Params.navigation | default true }}
+{{ if $nav }}
 <input type="checkbox" id="overlay-input" />
 <label for="overlay-input" id="overlay-button"><span></span></label>
 
@@ -35,14 +37,15 @@
     </div>
   </div>
 </header>
-
-{{ .Scratch.Set "banner" "https://images.squarespace-cdn.com/content/v1/5d9fb37da46cb72295018ff0/1571044469444-DNZ3XMDI3NIJCAQH2XEF/image-asset.jpeg?format=2500w" }}
-{{ if and .IsPage .Params.image }}
-{{ $img := .Params.image | printf "%s/%s" "/uploads" }}
-{{ .Scratch.Set "banner" $img }}
 {{ end }}
 
-<div class="banner-thumbnail-wrapper has-description" data-content-field="main-image">
+{{ .Scratch.Set "banner" "/default-banner.jpg" }}
+{{ if .Params.image }}
+  {{ $img := .Params.image | printf "%s/%s" "/uploads" }}
+  {{ .Scratch.Set "banner" $img }}
+{{ end }}
+
+<div class="banner-thumbnail-wrapper {{ if $nav }}banner-wrapper-pad{{ end }} has-description" data-content-field="main-image">
   <div class="color-overlay"></div>
   <figure id="thumbnail" class="loading content-fill" style="overflow: hidden;">
     <img src="{{ .Scratch.Get "banner" }}" style="font-size: 0px; left: 0px; position: relative;">
