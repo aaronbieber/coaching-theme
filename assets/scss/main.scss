@@ -2,15 +2,23 @@ $desktop-width: 1020px;
 $tablet-width: 850px;
 $phone-width: 550px;
 
+@import "grid";
+
 body {
   margin: 0;
   background-color: #1f1f1f;
+  color: rgba(26, 26, 26, 0.7);
 }
 
 article, aside, details, figcaption,
 figure, footer, header, hgroup,
 main, nav, section, summary {
   display: block;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+  margin-top: 0;
 }
 
 #siteWrapper {
@@ -37,6 +45,10 @@ main, nav, section, summary {
   left: 0;
   line-height: 1em;
   transition: all 0.2s ease-in-out;
+
+  h1, h2, h3, h4 {
+    margin-top: 0;
+  }
 
   .header-inner {
     padding: 20px 0;
@@ -286,7 +298,7 @@ main, nav, section, summary {
     font-size: 30px !important;
 
     span {
-      font-size: 25px !important;
+      font-size: 20px !important;
       margin-top: 5px;
     }
   }
@@ -378,7 +390,8 @@ main, nav, section, summary {
       text-transform: none;
       font-family: adobe-garamond-pro;
       display: block;
-      font-size: 50px;
+      font-size: 30px;
+      font-style: italic;
     }
   }
 }
@@ -392,9 +405,27 @@ main, nav, section, summary {
 
   #content {
     width: 100%;
-    max-width: 700px;
+    // max-width: 700px;
     display: block;
     margin: 0 auto;
+  }
+
+  @media screen and (max-width: #{$phone-width}) {
+    padding: 46px 5px;
+  }
+}
+
+.spacer-block {
+  font-size: 0;
+  line-height: 0;
+  height: 80px;
+
+  @media screen and (max-width: #{$tablet-width}) {
+    height: 50px;
+  }
+
+  @media screen and (max-width: #{$phone-width}) {
+    height: 20px;
   }
 }
 
@@ -456,6 +487,14 @@ article header h1 a {
 
 .entry-content {
   color: rgba(26, 26, 26, 0.7);
+}
+
+.dots {
+  text-align: center;
+  font-weight: normal;
+  font-size: 0.5em;
+  letter-spacing: 10px;
+  margin: 0 0 1.2em 0;
 }
 
 .blog-item, .page {
@@ -549,14 +588,6 @@ article header h1 a {
     margin-bottom: 1.2em;
   }
 
-  .dots {
-    text-align: center;
-    font-weight: normal;
-    font-size: 0.5em;
-    letter-spacing: 10px;
-    margin: 0 0 1.2em 0;
-  }
-
   p {
     margin: 0 0 1.2em 0;
   }
@@ -631,8 +662,9 @@ p code {
 }
 
 blockquote {
-  border-left: 2px solid rgba(0, 0, 0, 0.3);
-  padding: 0.2em 1em;
+  font-style: italic;
+  // border-left: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 0.2em 0;
 }
 
 blockquote p {
@@ -736,7 +768,7 @@ img.drop {
   border-top-right-radius: 300px;
   color: rgb(255, 255, 255);
   cursor: pointer;
-  display: block;
+  display: inline-block;
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-style: normal;
@@ -749,14 +781,17 @@ img.drop {
   padding-right: 34px;
   padding-top: 21px;
   text-align: center;
+  text-decoration: none;
   text-decoration-color: rgb(255, 255, 255);
   text-transform: uppercase;
   transition-delay: 0s;
   transition-duration: 0.1s;
   transition-property: opacity;
   transition-timing-function: linear;
-  width: 251.5px;
-  margin: 0 auto;
+  width: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .button-small {
