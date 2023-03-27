@@ -19,6 +19,10 @@ main, nav, section, summary {
 h1, h2, h3, h4 {
   font-weight: normal;
   margin-top: 0;
+
+  &.center {
+    text-align: center;
+  }
 }
 
 #siteWrapper {
@@ -37,6 +41,10 @@ h1, h2, h3, h4 {
 .banner-empty {
   height: 115px;
   background-color: rgba(26, 26, 26, 0.9);
+
+  @media screen and (max-width: #{$phone-width}) {
+    height: 90px;
+  }
 }
 
 #header {
@@ -66,7 +74,7 @@ h1, h2, h3, h4 {
 
       #logoImage {
         height: 75px;
-        width: 140px;
+        width: 75px;
         margin: 0;
         font-size: 0;
         max-width: 100%;
@@ -128,14 +136,21 @@ h1, h2, h3, h4 {
     }
   }
 
+  @media screen and (max-width: #{$phone-width}) {
+    .header-inner {
+      #logoWrapper {
+        #logoImage {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+
   @media screen and (max-width: #{$tablet-width}) {
     .header-inner {
       #headerNav {
         display: none;
-      }
-
-      #logoWrapper img {
-        max-height: 50px;
       }
     }
 
@@ -242,7 +257,7 @@ h1, h2, h3, h4 {
       user-select: none;
       z-index: 1500;
       right: 1em;
-      top: 1em;
+      top: 1.3em;
 
       input[type=checkbox]:checked ~ &:hover {
         span {
@@ -291,6 +306,12 @@ h1, h2, h3, h4 {
           top: 10px;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: #{$phone-width}) {
+    & {
+      top: 0.8em;
     }
   }
 }
@@ -553,6 +574,15 @@ article header h1 a {
   font-size: 0.5em;
   letter-spacing: 10px;
   margin: 0 0 1.2em 0;
+}
+
+.narrow {
+  width: 83%;
+  margin: 0 auto;
+
+  @media only screen and (max-width: #{$phone-width}) {
+    width: 100%;
+  }
 }
 
 .blog-item, .page {
