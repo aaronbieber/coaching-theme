@@ -34,6 +34,11 @@ h1, h2, h3, h4 {
   box-sizing: border-box;
 }
 
+.banner-empty {
+  height: 115px;
+  background-color: rgba(26, 26, 26, 0.9);
+}
+
 #header {
   position: absolute;
   z-index: 1000;
@@ -65,6 +70,10 @@ h1, h2, h3, h4 {
         margin: 0;
         font-size: 0;
         max-width: 100%;
+
+        img {
+          width: 75px;
+        }
       }
     }
 
@@ -311,14 +320,18 @@ h1, h2, h3, h4 {
 #footer {
   color: rgba(255, 255, 255, 0.4);
   background-color: #1f1f1f;
-}
 
-.footer-inner {
-  padding: 64px 32px;
-  box-sizing: border-box;
-  max-width: 1020px;
-  width: auto;
-  margin: auto;
+  .footer-inner {
+    padding: 64px 32px;
+    box-sizing: border-box;
+    max-width: 1020px;
+    width: auto;
+    margin: auto;
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 #siteInfo {
@@ -415,18 +428,65 @@ h1, h2, h3, h4 {
   }
 }
 
-.spacer-block {
-  font-size: 0;
-  line-height: 0;
-  height: 80px;
+.block {
+  box-sizing: border-box;
+  padding: 15px 0;
 
   @media screen and (max-width: #{$tablet-width}) {
-    height: 50px;
+    padding: 25px 0;
   }
 
   @media screen and (max-width: #{$phone-width}) {
-    height: 20px;
+    padding: 10px 0;
   }
+}
+
+.hr {
+  padding: 50px 0;
+
+  hr {
+    margin: 32px 0;
+    border-style: none;
+    border-width: 0;
+    height: 1px;
+    color: rgba(26, 26, 26, .15);
+    background-color: rgba(26, 26, 26, .15);
+  }
+}
+
+.pullquote {
+  padding: 0 50px;
+
+  blockquote {
+    padding: 0;
+    margin: 0;
+    font-style: normal;
+    font-size: 0.9em;
+    line-height: 1.5em;
+
+    span {
+      display: block;
+      text-align: center;
+      color: silver;
+      font-size: 90px;
+    }
+  }
+
+  figcaption {
+    margin-top: 1em !important;
+    text-align: center;
+    color: rgba(0, 0, 0, .45);
+    font-size: 0.9em;
+
+    &::before {
+      content: "—"
+    }
+  }
+}
+
+.spacer {
+  font-size: 0;
+  line-height: 0;
 }
 
 .entry-more-link a,
@@ -434,12 +494,6 @@ h1, h2, h3, h4 {
 .entry-content a,
 .blog-item a {
   color: #3d74c7;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid silver;
-  margin: 2em 0;
 }
 
 .pagination .left {
@@ -481,6 +535,10 @@ img.entry-image {
   max-height: 300px;
 }
 
+img {
+  max-width: 100%;
+}
+
 article header h1 a {
   color: rgba(26, 26, 26, 0.9);
 }
@@ -506,7 +564,7 @@ article header h1 a {
     margin-bottom: 1em;
   }
 
-  h1, h2, h3 {
+  h2, h3 {
     text-transform: uppercase;
     font-family: proxima-nova;
     letter-spacing: 0.05em;
@@ -558,7 +616,7 @@ article header h1 a {
 
   img {
     width: 100%;
-    max-width: 700px;
+    // max-width: 700px;
 
     &.left {
       width: inherit;
