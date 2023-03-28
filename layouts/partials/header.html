@@ -13,26 +13,14 @@
     <div id="headerNav">
       <div id="mainNavWrapper" class="nav-wrapper" data-content-field="navigation-mainNav">
         <nav id="mainNavigation" data-content-field="navigation-mainNav">
-          <div class="collection homepage">
-            <a href="{{ .Site.BaseURL }}">
-              Home
-            </a>
-          </div>
-          <div class="collection">
-            <a href="/about">
-              Meet Aaron
-            </a>
-          </div>
-          <div class="collection">
-            <a href="https://thecuriousleader.work">
-              "The Curious Leader"
-            </a>
-          </div>
-          <div class="collection">
-            <a href="/get-started">
-              Work With Aaron
-            </a>
-          </div>
+
+          {{ range .Site.Data.navigation.links }}
+            <div class="collection homepage">
+              <a href="{{ .url }}">
+                {{ .name }}
+              </a>
+            </div>
+          {{ end }}
         </nav>
       </div>
     </div>
