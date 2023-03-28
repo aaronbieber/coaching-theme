@@ -442,6 +442,11 @@ h1, h2, h3, h4 {
     // max-width: 700px;
     display: block;
     margin: 0 auto;
+
+    .blog-list, .blog-item {
+      max-width: 700px;
+      margin: 0 auto;
+    }
   }
 
   @media screen and (max-width: #{$phone-width}) {
@@ -464,15 +469,15 @@ h1, h2, h3, h4 {
 
 .hr {
   padding: 50px 0;
+}
 
-  hr {
-    margin: 32px 0;
-    border-style: none;
-    border-width: 0;
-    height: 1px;
-    color: rgba(26, 26, 26, .15);
-    background-color: rgba(26, 26, 26, .15);
-  }
+hr {
+margin: 32px 0;
+border-style: none;
+border-width: 0;
+height: 1px;
+color: rgba(26, 26, 26, .15);
+background-color: rgba(26, 26, 26, .15);
 }
 
 .pullquote {
@@ -542,6 +547,7 @@ body .entry + .entry {
 }
 
 .entry-title {
+  margin-top: 1em;
   font-weight: 400;
 }
 
@@ -750,9 +756,9 @@ p code {
 }
 
 blockquote {
-  font-style: italic;
-  // border-left: 2px solid rgba(0, 0, 0, 0.3);
-  padding: 0.2em 0;
+  border-left: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 0.2em 1em;
+  margin: 2em 2em;
 }
 
 blockquote p {
