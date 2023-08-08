@@ -686,6 +686,10 @@ article header h1 a {
     margin: 0 0 1.2em 0;
   }
 
+  blockquote {
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+  }
+
   /* God save you if you use a superscript for something other than a
    footnote reference. */
   sup {
@@ -756,7 +760,6 @@ p code {
 }
 
 blockquote {
-  border-left: 2px solid rgba(0, 0, 0, 0.3);
   padding: 0.2em 1em;
   margin: 2em 2em;
 }
