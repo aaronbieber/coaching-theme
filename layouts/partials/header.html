@@ -30,25 +30,23 @@
 
 
 {{ if $banner }}
+  {{ .Scratch.Set "banner" "/images/default-banner.jpg" }}
+  {{ if and .Params.image (.Page.Resources.GetMatch .Params.image) }}
+    {{ .Scratch.Set "banner" (.Page.Resources.GetMatch .Params.image).RelPermalink }}
+  {{ end }}
 
-{{ .Scratch.Set "banner" "/images/default-banner.jpg" }}
-{{ if .Params.image }}
-  {{ $img := .Params.image | printf "%s/%s" "/uploads" }}
-  {{ .Scratch.Set "banner" $img }}
-{{ end }}
-
-<div class="banner-thumbnail-wrapper {{ if $nav }}banner-wrapper-pad{{ end }} has-description" data-content-field="main-image">
-  <div class="color-overlay"></div>
-  <figure id="thumbnail" class="loading content-fill" style="overflow: hidden;">
-    <img src="{{ .Scratch.Get "banner" }}" style="font-size: 0px; left: 0px; position: relative;">
-  </figure>
-  <div class="desc-wrapper" data-content-field="description">
-    <p class="" style="white-space:pre-wrap;" id="yui_3_17_2_1_1642280740191_45">{{ .Page.Title }}<span>{{ .Params.subtitle }}</span></p>
+  <div class="banner-thumbnail-wrapper {{ if $nav }}banner-wrapper-pad{{ end }} has-description" data-content-field="main-image">
+    <div class="color-overlay"></div>
+    <figure id="thumbnail" class="loading content-fill" style="overflow: hidden;">
+      <img src="{{ .Scratch.Get "banner" }}" style="font-size: 0px; left: 0px; position: relative;">
+    </figure>
+    <div class="desc-wrapper" data-content-field="description">
+      <p class="" style="white-space:pre-wrap;" id="yui_3_17_2_1_1642280740191_45">{{ .Page.Title }}<span>{{ .Params.subtitle }}</span></p>
+    </div>
   </div>
-</div>
 
 {{ else }}
 
-<div class="banner-empty"></div>
+  <div class="banner-empty"></div>
 
 {{ end }}
