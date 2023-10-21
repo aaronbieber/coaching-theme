@@ -1122,3 +1122,25 @@ background-color: #FF6600
 .skip_subscribe {
   text-align: center;
 }
+
+.book {
+  .cover {
+    display: block;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+    padding: 0;
+
+    img {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .title {
+    display: block;
+    margin-top: 1em;
+    text-align: center;
+  }
+
+
+}
