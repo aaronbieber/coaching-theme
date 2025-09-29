@@ -16,7 +16,7 @@
         {{ if (.Page.Resources.GetMatch .Params.image) }}
           <img class="entry-image" src="{{ (.Page.Resources.GetMatch .Params.image).RelPermalink }}" />
         {{ else }}
-          <img class="entry-image" src="https://via.placeholder.com/500x250" />
+          <img class="entry-image" src="https://placehold.co/500x250" />
         {{ end }}
         </a>
       {{ end }}
