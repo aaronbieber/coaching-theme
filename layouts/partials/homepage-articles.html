@@ -29,13 +29,4 @@
         {{ end }}
       </h1>
     </header>
-
-    <div class="entry-content">
-      <div class="p-summary">
-        <p class="">{{ .Summary }}</p></div>
-
-      {{ if .Truncated }}
-      <p class="entry-more-link"><a data-read-more="Read More" href="{{ .RelPermalink }}">Read more &rarr;</a></p>
-      {{ end }}
-    </div>
   </article>
