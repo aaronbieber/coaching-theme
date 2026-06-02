@@ -472,12 +472,12 @@ h1, h2, h3, h4 {
 }
 
 hr {
-margin: 32px 0;
-border-style: none;
-border-width: 0;
-height: 1px;
-color: rgba(26, 26, 26, .15);
-background-color: rgba(26, 26, 26, .15);
+  margin: 32px 0;
+  border-style: none;
+  border-width: 0;
+  height: 1px;
+  color: rgba(26, 26, 26, .15);
+  background-color: rgba(26, 26, 26, .15);
 }
 
 .pullquote {
@@ -487,7 +487,7 @@ background-color: rgba(26, 26, 26, .15);
     padding: 0;
     margin: 0;
     font-style: normal;
-    font-size: 0.9em;
+    font-size: 1.2em;
     line-height: 1.5em;
 
     span {
@@ -502,7 +502,7 @@ background-color: rgba(26, 26, 26, .15);
     margin-top: 1em !important;
     text-align: center;
     color: rgba(0, 0, 0, .45);
-    font-size: 0.9em;
+    font-size: 1em;
 
     &::before {
       content: "—"
@@ -520,6 +520,11 @@ background-color: rgba(26, 26, 26, .15);
 .entry-content a,
 .blog-item a {
   color: #3d74c7;
+}
+
+.blog-item a.button-medium,
+.blog-item a.button-small {
+  color: rgb(255, 255, 255);
 }
 
 .pagination .left {
@@ -610,6 +615,10 @@ article header h1 a {
 
   blockquote {
     border-left: 2px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .pullquote blockquote {
+    border-left: none;
   }
 
   /* God save you if you use a superscript for something other than a
