@@ -7,7 +7,7 @@
   <link rel="manifest" href="/site.webmanifest">
 
   {{ $options := (dict "outputstyle" "compressed") }}
-  {{ $styles := resources.Get "scss/main.scss" | toCSS $options }}
+  {{ $styles := resources.Get "scss/main.scss" | toCSS $options | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" type="text/css" media="screen" />
 
   <link rel="stylesheet" href="https://use.typekit.net/gur7hoz.css">
